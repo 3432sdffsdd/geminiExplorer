@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Share2, Globe2, MessageCircle, ArrowRight, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Camera, MessageCircle, ArrowRight, Send } from "lucide-react";
 import { useState } from "react";
 import { fadeUp, staggerContainer, viewportConfig } from "@/lib/animations";
 
@@ -83,13 +83,13 @@ export default function Footer() {
                 <MessageCircle className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/geminiexplorer_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-[#E1306C]/10 border border-[#E1306C]/20 flex items-center justify-center text-[#E1306C] hover:bg-[#E1306C]/20 transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Share2 className="w-4 h-4" />
+                <Camera className="w-4 h-4" />
               </a>
               <a
                 href="https://facebook.com"
@@ -98,7 +98,7 @@ export default function Footer() {
                 className="w-10 h-10 rounded-xl bg-[#1877F2]/10 border border-[#1877F2]/20 flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2]/20 transition-all duration-300"
                 aria-label="Facebook"
               >
-                <Globe2 className="w-4 h-4" />
+                <span className="text-base font-bold leading-none" style={{ fontFamily: "Arial, sans-serif" }}>f</span>
               </a>
             </div>
           </motion.div>

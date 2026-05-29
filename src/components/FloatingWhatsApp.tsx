@@ -26,7 +26,7 @@ export default function FloatingWhatsApp() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm" style={{ fontFamily: "var(--font-poppins)" }}>
-                    Discover Pakistan
+                    Gemini Explorer
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-white animate-pulse" />

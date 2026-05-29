@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Camera } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="relative px-4 py-2 text-[13px] font-medium tracking-wide text-white/75 hover:text-white transition-colors duration-200 group"
+                  className="relative px-4 py-2 text-sm font-medium tracking-wide text-white/75 hover:text-white transition-colors duration-200 group"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {link.label}
@@ -75,6 +75,15 @@ export default function Navbar() {
               >
                 <Phone className="w-4 h-4 text-[#159447]" />
                 <span className="hidden xl:inline" style={{ fontFamily: "var(--font-inter)" }}>+92 300 3667466</span>
+              </a>
+              <a
+                href="https://www.instagram.com/geminiexplorer_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/15 text-[#E1306C] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#E1306C]/45 hover:bg-[#E1306C]/10"
+                aria-label="Instagram"
+              >
+                <Camera className="h-5 w-5" />
               </a>
               <Link
                 href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."

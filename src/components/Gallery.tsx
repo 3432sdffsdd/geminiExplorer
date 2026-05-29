@@ -141,13 +141,13 @@ export default function Gallery() {
             Follow our journey on Instagram
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/geminiexplorer_/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-white/15 text-white font-medium text-sm hover:border-[#F59E0B]/40 hover:text-[#F59E0B] transition-all duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            <span>@DiscoverPakistan</span>
+            <span>@geminiexplorer_</span>
           </a>
         </motion.div>
       </div>
