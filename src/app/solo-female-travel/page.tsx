@@ -101,170 +101,185 @@ export default function SoloFemaleTravelPage() {
 
         {/* About Section */}
         <section className="relative pt-0 pb-20 -mt-32">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              
-              viewport={viewportConfig}
-            >
-              <motion.p
-                variants={fadeUp}
-                className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
-                I was born in Skardu, nestled among the majestic Karakoram Mountains, and grew up exploring landscapes that most people only dream of seeing.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
-                For more than 12 years, I have had the privilege of guiding travellers from around the world through Pakistan's most breathtaking destinations.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
-                As a female guide, I understand the concerns many women have when travelling to a new country.
-              </motion.p>
-
-              <motion.div
-                variants={fadeUp}
-                className="p-8 rounded-3xl border-l-4 border-[#EC4899] bg-[#EC4899]/5 my-8"
-              >
-               
-                <p className="text-sm text-white/40 mt-4 font-light" style={{ fontFamily: "var(--font-inter)" }}>
-                  — Fatima Ali, Founder & Guide
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Gallery Section */}
-        <section className="relative py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
-              className="text-center mb-12"
-            >
-              
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {[
-                {
-                  src: "/images/solo9.mp4",
-                  alt: "Solo memories video",
-                  title: "Travel Memories",
-                  type: "video"
-                },
-                {
-                  src: "/images/solo5.png",
-                  alt: "Solo trekking",
-                  title: "Solo Trekking",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo1.jpeg",
-                  alt: "Solo female traveler",
-                  title: "Solo Adventure",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo2.jpeg",
-                  alt: "Solo travel experience",
-                  title: "Travel Experience",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo3.jpg",
-                  alt: "Solo journey",
-                  title: "Solo Journey",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo4.png",
-                  alt: "Solo exploration",
-                  title: "Solo Exploration",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo6.png",
-                  alt: "Solo mountain adventure",
-                  title: "Mountain Adventure",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo15.png",
-                  alt: "Solo valley view",
-                  title: "Valley Views",
-                  type: "image"
-                },
-                {
-                  src: "/images/solo10.mp4",
-                  alt: "Solo travel video",
-                  title: "Travel Moments",
-                  type: "video"
-                },
-                {
-                  src: "/images/solo11.mp4",
-                  alt: "Solo adventure video",
-                  title: "Adventure Highlights",
-                  type: "video"
-                },
-                {
-                  src: "/images/solo134.mp4",
-                  alt: "Solo experience video",
-                  title: "Experience Video",
-                  type: "video"
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left: Text Content */}
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+              >
+                <motion.p
                   variants={fadeUp}
-                  className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
-                  onClick={() => item.type === "video" && setSelectedVideo(item.src)}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  {item.type === "image" ? (
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <video
-                      src={item.src}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      autoPlay
-                      controls
-                      muted
-                      loop
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-white font-semibold text-lg" style={{ fontFamily: "var(--font-poppins)" }}>
-                      {item.title}
-                    </h3>
-                  </div>
+                  Fatima&apos;s connection with travel started at a young age. At just 16, she began exploring Pakistan, guided by a strong love for nature, adventure, and discovering places beyond the usual routes. What started as passion slowly became a lifelong journey.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  With more than 15 years of travel experience, Fatima has explored Pakistan extensively. From the mountains of Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, and Deosai, to the valleys of Kashmir including Ratti Gali, Taobat, Baboon Valley, and Kutora Lake, her footsteps cover some of the most breathtaking landscapes in the country. Her travels also extend to southern and central Pakistan, including Gorakh Hill, Kund Malir, Ormara Beach, Quetta, Ziarat, Uch Sharif, Dadu, and major cities such as Lahore, Multan, Faisalabad, and Islamabad.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  In 2019, Fatima stepped into tour planning on a professional level. Over time, she began leading tours on her own, handling groups of all sizes, from small circles to gatherings of over 250 people. She continued this work before and after marriage with the same focus, responsibility, and commitment.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  One of the most inspiring parts of Fatima&apos;s journey is how she balanced travel with motherhood. Even with two very young children, she never stepped back. She successfully managed full tours in harsh and sub-zero weather. Her children joined her on their first trips when they were barely toddlers, growing up surrounded by mountains, trails, and open skies.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  Alhamdulillah, Fatima stands among the few women in Pakistan who continued leading travel journeys while raising young children. Today, her children actively hike and trek with her, reflecting the values she has passed on through her lifestyle.
+                </motion.p>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  For Fatima, travel is not just about reaching destinations. It is about building strength, confidence, and a deep respect for nature. Her journey reflects love for Pakistan, resilience in the face of challenges, and a desire to raise her children with meaningful, adventurous experiences.
+                </motion.p>
+
+                <motion.div
+                  variants={fadeUp}
+                  className="p-8 rounded-3xl border-l-4 border-[#EC4899] bg-[#EC4899]/5 my-8"
+                >
+                 
+                  <p className="text-sm text-white/40 mt-4 font-light" style={{ fontFamily: "var(--font-inter)" }}>
+                    — Fatima Ali, Founder & Guide
+                  </p>
                 </motion.div>
-              ))}
-            </motion.div>
+              </motion.div>
+
+              {/* Right: Gallery */}
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
+                {[
+                  {
+                    src: "/images/solo9.mp4",
+                    alt: "Solo memories video",
+                    title: "Travel Memories",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo5.png",
+                    alt: "Solo trekking",
+                    title: "Solo Trekking",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo1.jpeg",
+                    alt: "Solo female traveler",
+                    title: "Solo Adventure",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo2.jpeg",
+                    alt: "Solo travel experience",
+                    title: "Travel Experience",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo3.jpg",
+                    alt: "Solo journey",
+                    title: "Solo Journey",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo4.png",
+                    alt: "Solo exploration",
+                    title: "Solo Exploration",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo6.png",
+                    alt: "Solo mountain adventure",
+                    title: "Mountain Adventure",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo15.png",
+                    alt: "Solo valley view",
+                    title: "Valley Views",
+                    type: "image"
+                  },
+                  {
+                    src: "/images/solo10.mp4",
+                    alt: "Solo travel video",
+                    title: "Travel Moments",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo11.mp4",
+                    alt: "Solo adventure video",
+                    title: "Adventure Highlights",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo134.mp4",
+                    alt: "Solo experience video",
+                    title: "Experience Video",
+                    type: "video"
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeUp}
+                    className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+                    onClick={() => item.type === "video" && setSelectedVideo(item.src)}
+                  >
+                    {item.type === "image" ? (
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <video
+                        src={item.src}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        autoPlay
+                        controls
+                        muted
+                        loop
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-white font-semibold text-sm" style={{ fontFamily: "var(--font-poppins)" }}>
+                        {item.title}
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
 

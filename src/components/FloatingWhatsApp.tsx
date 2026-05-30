@@ -50,7 +50,7 @@ export default function FloatingWhatsApp() {
               </div>
 
               <a
-                href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#22c55e] transition-colors"

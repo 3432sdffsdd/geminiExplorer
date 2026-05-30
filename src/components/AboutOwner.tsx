@@ -6,7 +6,7 @@ import { Star, Award, Heart, Globe } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, viewportConfig } from "@/lib/animations";
 
 const achievements = [
-  { icon: Globe, value: "12+", label: "Years Experience", color: "#F59E0B" },
+  { icon: Globe, value: "15+", label: "Years Experience", color: "#F59E0B" },
   { icon: Star, value: "4.9★", label: "Average Rating", color: "#10B981" },
   { icon: Heart, value: "500+", label: "Tours Completed", color: "#EC4899" },
   { icon: Award, value: "50+", label: "Countries Served", color: "#3B82F6" },
@@ -98,18 +98,14 @@ export default function AboutOwner() {
               className="text-base text-white/55 leading-relaxed mb-5 font-light"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              I was born in Skardu, nestled among the majestic Karakoram Mountains, and grew up exploring landscapes that most people only dream of seeing. For over 12 years, I&apos;ve
-              had the privilege of guiding travellers from around the world through Pakistan&apos;s
-              most extraordinary landscapes.
+              Fatima&apos;s connection with travel started at a young age. At just 16, she began exploring Pakistan, guided by a strong love for nature, adventure, and discovering places beyond the usual routes. What started as passion slowly became a lifelong journey.
             </motion.p>
             <motion.p
               variants={fadeUp}
               className="text-base text-white/55 leading-relaxed mb-8 font-light"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              My mission is simple: to show you the real beauty of Pakistan — the kind that
-              stays in your heart long after you return home. I want every journey to feel
-              safe, comfortable, and deeply unforgettable.
+              With more than 15 years of travel experience, Fatima has explored Pakistan extensively. From the mountains of Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, and Deosai, to the valleys of Kashmir including Ratti Gali, Taobat, Baboon Valley, and Kutora Lake, her footsteps cover some of the most breathtaking landscapes in the country.
             </motion.p>
 
             {/* Signature quote */}

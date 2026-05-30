@@ -11,8 +11,8 @@ const navLinks = [
   { label: "Tours", href: "/#tours" },
   { label: "Experiences", href: "/#experiences" },
   { label: "Gallery", href: "/#gallery" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
+  { label: "Transport", href: "/transport" },
+  { label: "Contact", href: "https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
 ];
 
 export default function Navbar() {
@@ -86,7 +86,7 @@ export default function Navbar() {
                 <Camera className="h-5 w-5" />
               </a>
               <Link
-                href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group ml-3 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/15 px-5 py-2.5 text-[12px] font-medium text-white/90 shadow-[0_12px_32px_rgba(0,0,0,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/10 hover:text-white"
@@ -146,7 +146,7 @@ export default function Navbar() {
                 className="mt-4"
               >
                 <Link
-                  href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                  href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}

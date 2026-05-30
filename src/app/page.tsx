@@ -4,7 +4,6 @@ import WhyVisit from "@/components/WhyVisit";
 import Destinations from "@/components/Destinations";
 import TrustSection from "@/components/TrustSection";
 import TourPackages from "@/components/TourPackages";
-import Transport from "@/components/Transport";
 import Experiences from "@/components/Experiences";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
@@ -27,7 +26,6 @@ export default function Home() {
         <TrustSection />
         <TourPackages />
         <WhyVisit />
-        <Transport />
         <Experiences />
         <Gallery />
         <Testimonials />

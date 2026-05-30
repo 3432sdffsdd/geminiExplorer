@@ -91,7 +91,7 @@ export default function FinalCTA() {
             className="mt-9 flex flex-col items-start gap-4 sm:flex-row"
           >
             <a
-              href="https://wa.me/923001234567"
+              href="https://wa.me/923003667466"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.06] px-7 py-4 text-sm font-bold text-white backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"

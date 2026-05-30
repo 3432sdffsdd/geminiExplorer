@@ -15,7 +15,6 @@ const packages = [
     duration: "5 Days",
     image:
       "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=700&q=80",
-    price: "From PKR 45,000",
     rating: "4.9",
   },
   {
@@ -23,7 +22,6 @@ const packages = [
     duration: "7 Days",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
-    price: "From PKR 85,000",
     rating: "5.0",
   },
   {
@@ -31,7 +29,6 @@ const packages = [
     duration: "4 Days",
     image:
       "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=80",
-    price: "From PKR 35,000",
     rating: "4.8",
   },
   {
@@ -39,7 +36,6 @@ const packages = [
     duration: "3 Days",
     image:
       "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=700&q=80",
-    price: "From PKR 28,000",
     rating: "4.9",
   },
 ];
@@ -85,7 +81,7 @@ export default function TourPackages() {
 
           <motion.a
             variants={fadeUp}
-            href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+            href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
             className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-7 py-4 text-sm font-medium text-white/80 backdrop-blur-xl transition-all duration-300 hover:border-[#16c25f]/40 hover:bg-[#16c25f] hover:text-white"
             style={{ fontFamily: "var(--font-inter)" }}
           >
@@ -160,16 +156,9 @@ export default function TourPackages() {
                 </div>
 
                 {/* FOOTER */}
-                <div className="mt-6 flex items-center justify-between border-t border-white/8 pt-5">
-                  <span
-                    className="text-[17px] font-medium tracking-wide text-white"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {pkg.price}
-                  </span>
-
+                <div className="mt-6 flex items-center justify-end border-t border-white/8 pt-5">
                   <a
-                    href="https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                    href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[#16c25f] text-white shadow-lg shadow-[#16c25f]/30 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
                   >
                     <ArrowRight className="h-4 w-4" />

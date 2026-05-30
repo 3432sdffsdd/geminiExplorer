@@ -12,7 +12,7 @@ const quickLinks = [
   { label: "Experiences", href: "#experiences" },
   { label: "Gallery", href: "#gallery" },
   { label: "About Us", href: "#about" },
-  { label: "Contact", href: "https://wa.me/923001234567?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
+  { label: "Contact", href: "https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
 ];
 
 const destinations = [
