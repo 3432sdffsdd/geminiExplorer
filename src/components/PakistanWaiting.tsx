@@ -32,7 +32,7 @@ const cards = [
   },
   {
     icon: FileText,
-    title: "Visa Information",
+    title: "Visa Info",
     description:
       "Learn about Pakistan's visa process, required documents, and travel preparation tips.",
     link: "/visa-information",
