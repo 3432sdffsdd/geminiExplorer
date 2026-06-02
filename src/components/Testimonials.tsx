@@ -3,14 +3,24 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { fadeUp, staggerContainer, viewportConfig } from "@/lib/animations";
 
 const testimonials = [
   {
+    name: "Kashif Rizwan from Karachi",
+    country: "",
+    flag: "",
+    role: "Traveller",
+    image: "/images/storiesfrompak.mp4",
+    rating: 5,
+    text: "We visited Swat, Kalam, Malam Jabba, and Shogran, and had an absolutely wonderful time. The entire trip was well-organized, comfortable, and enjoyable from start to finish. The team was professional, cooperative, and ensured that everything went smoothly throughout the journey.",
+    tour: "Swat Valley Tour",
+  },
+  {
     name: "Wojciech Kopec",
     country: "Poland",
-    flag: "��",
+    flag: "🇵🇱",
     role: "Solo Traveller",
     image: "/images/foreigner1.jpeg",
     rating: 5,
@@ -61,6 +71,7 @@ const testimonials = [
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const prev = () => setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
   const next = () => setActive((a) => (a + 1) % testimonials.length);
@@ -142,14 +153,27 @@ export default function Testimonials() {
 
                 {/* Right: Person */}
                 <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-3 md:min-w-[160px]">
-                  <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden ring-2 ring-[#F59E0B]/30">
-                    <Image
-                      src={testimonials[active].image}
-                      alt={testimonials[active].name}
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                    />
+                  <div
+                    className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden ring-2 ring-[#F59E0B]/30 cursor-pointer"
+                    onClick={() => testimonials[active].image.endsWith('.mp4') && setSelectedVideo(testimonials[active].image)}
+                  >
+                    {testimonials[active].image.endsWith('.mp4') ? (
+                      <video
+                        src={testimonials[active].image}
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                      />
+                    ) : (
+                      <Image
+                        src={testimonials[active].image}
+                        alt={testimonials[active].name}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    )}
                   </div>
                   <div className="text-center md:text-center">
                     <div className="text-white font-bold text-base" style={{ fontFamily: "var(--font-poppins)" }}>
@@ -222,7 +246,17 @@ export default function Testimonials() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                  <Image src={t.image} alt={t.name} fill className="object-cover" sizes="32px" />
+                  {t.image.endsWith('.mp4') ? (
+                    <video
+                      src={t.image}
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                    />
+                  ) : (
+                    <Image src={t.image} alt={t.name} fill className="object-cover" sizes="32px" />
+                  )}
                 </div>
                 <span className="text-sm">{t.flag}</span>
               </div>
@@ -236,6 +270,38 @@ export default function Testimonials() {
           ))}
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.9 }}
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-12 right-0 text-white hover:text-white/80 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <video
+              src={selectedVideo}
+              className="w-full rounded-2xl"
+              autoPlay
+              controls
+            />
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 }

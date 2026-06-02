@@ -115,7 +115,7 @@ export default function SoloFemaleTravelPage() {
                   className="text-lg text-white/60 leading-relaxed mb-6 font-light"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  Fatima&apos;s connection with travel started at a young age. At just 16, she began exploring Pakistan, guided by a strong love for nature, adventure, and discovering places beyond the usual routes. What started as passion slowly became a lifelong journey.
+                  Fatima&apos;s passion for travel began at the age of 16 and grew into a lifelong journey of exploration. With over 15 years of experience, she has traveled extensively across Pakistan, discovering iconic destinations such as Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, Deosai, and the stunning valleys of Kashmir.
                 </motion.p>
 
                 <motion.p
@@ -123,46 +123,14 @@ export default function SoloFemaleTravelPage() {
                   className="text-lg text-white/60 leading-relaxed mb-6 font-light"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
-                  With more than 15 years of travel experience, Fatima has explored Pakistan extensively. From the mountains of Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, and Deosai, to the valleys of Kashmir including Ratti Gali, Taobat, Baboon Valley, and Kutora Lake, her footsteps cover some of the most breathtaking landscapes in the country. Her travels also extend to southern and central Pakistan, including Gorakh Hill, Kund Malir, Ormara Beach, Quetta, Ziarat, Uch Sharif, Dadu, and major cities such as Lahore, Multan, Faisalabad, and Islamabad.
-                </motion.p>
-
-                <motion.p
-                  variants={fadeUp}
-                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
-                  In 2019, Fatima stepped into tour planning on a professional level. Over time, she began leading tours on her own, handling groups of all sizes, from small circles to gatherings of over 250 people. She continued this work before and after marriage with the same focus, responsibility, and commitment.
-                </motion.p>
-
-                <motion.p
-                  variants={fadeUp}
-                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
-                  One of the most inspiring parts of Fatima&apos;s journey is how she balanced travel with motherhood. Even with two very young children, she never stepped back. She successfully managed full tours in harsh and sub-zero weather. Her children joined her on their first trips when they were barely toddlers, growing up surrounded by mountains, trails, and open skies.
-                </motion.p>
-
-                <motion.p
-                  variants={fadeUp}
-                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
-                  Alhamdulillah, Fatima stands among the few women in Pakistan who continued leading travel journeys while raising young children. Today, her children actively hike and trek with her, reflecting the values she has passed on through her lifestyle.
-                </motion.p>
-
-                <motion.p
-                  variants={fadeUp}
-                  className="text-lg text-white/60 leading-relaxed mb-6 font-light"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
-                  For Fatima, travel is not just about reaching destinations. It is about building strength, confidence, and a deep respect for nature. Her journey reflects love for Pakistan, resilience in the face of challenges, and a desire to raise her children with meaningful, adventurous experiences.
+                  What makes Fatima&apos;s story truly remarkable is her journey as both a traveler and a mother. As a solo female traveler, she continued exploring Pakistan&apos;s remote valleys, mountains, and challenging terrains while raising her children and often taking them along on her adventures. By successfully balancing family life with her love for travel, she has broken stereotypes and become an inspiration for women and families who aspire to explore Pakistan with confidence and freedom.
                 </motion.p>
 
                 <motion.div
                   variants={fadeUp}
                   className="p-8 rounded-3xl border-l-4 border-[#EC4899] bg-[#EC4899]/5 my-8"
                 >
-                 
+
                   <p className="text-sm text-white/40 mt-4 font-light" style={{ fontFamily: "var(--font-inter)" }}>
                     — Fatima Ali, Founder & Guide
                   </p>
@@ -179,9 +147,45 @@ export default function SoloFemaleTravelPage() {
               >
                 {[
                   {
+                    src: "/images/solofemale.mp4",
+                    alt: "Solo female travel journey",
+                    title: "Travel Journey",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solofemale (2).mp4",
+                    alt: "Solo female adventure",
+                    title: "Adventure Stories",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solofemale (3).mp4",
+                    alt: "Solo female exploration",
+                    title: "Exploration",
+                    type: "video"
+                  },
+                  {
                     src: "/images/solo9.mp4",
                     alt: "Solo memories video",
                     title: "Travel Memories",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo10.mp4",
+                    alt: "Solo travel video",
+                    title: "Travel Moments",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo11.mp4",
+                    alt: "Solo adventure video",
+                    title: "Adventure Highlights",
+                    type: "video"
+                  },
+                  {
+                    src: "/images/solo134.mp4",
+                    alt: "Solo experience video",
+                    title: "Experience Video",
                     type: "video"
                   },
                   {
@@ -225,30 +229,13 @@ export default function SoloFemaleTravelPage() {
                     alt: "Solo valley view",
                     title: "Valley Views",
                     type: "image"
-                  },
-                  {
-                    src: "/images/solo10.mp4",
-                    alt: "Solo travel video",
-                    title: "Travel Moments",
-                    type: "video"
-                  },
-                  {
-                    src: "/images/solo11.mp4",
-                    alt: "Solo adventure video",
-                    title: "Adventure Highlights",
-                    type: "video"
-                  },
-                  {
-                    src: "/images/solo134.mp4",
-                    alt: "Solo experience video",
-                    title: "Experience Video",
-                    type: "video"
                   }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
                     variants={fadeUp}
-                    className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
+                    className="group relative w-full overflow-hidden rounded-2xl cursor-pointer bg-white/5"
+                    style={{ aspectRatio: '4/3' }}
                     onClick={() => item.type === "video" && setSelectedVideo(item.src)}
                   >
                     {item.type === "image" ? (
@@ -262,7 +249,8 @@ export default function SoloFemaleTravelPage() {
                     ) : (
                       <video
                         src={item.src}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        style={{ objectFit: 'cover' }}
                         autoPlay
                         controls
                         muted

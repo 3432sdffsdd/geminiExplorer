@@ -53,6 +53,13 @@ const influencers = [
   },
 ];
 
+const karachiVisitImages = [
+  "/images/forsec.jpeg",
+  "/images/forsec2.jpeg",
+  "/images/forsec3.jfif",
+  "/images/forsec4.jfif",
+];
+
 export default function IsPakistanSafePage() {
   return (
     <>
@@ -91,8 +98,8 @@ export default function IsPakistanSafePage() {
           </div>
         </section>
 
-        <section className="relative px-6 py-16">
-          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-center">
+        <section className="relative px-6 pt-16 pb-0">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-start">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportConfig}>
               <span className="text-sm font-bold uppercase tracking-[0.24em] text-[#F59E0B]">
                   Is Pakistan Safe To Travel?
@@ -101,28 +108,81 @@ export default function IsPakistanSafePage() {
               <h2 className="mt-4 max-w-xl text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
                 A misunderstood destination with unforgettable experiences.
               </h2>
-            </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
-              className="rounded-[30px] border border-white/10 bg-white/[0.045] p-7 backdrop-blur-xl"
-            >
-              <p className="text-base leading-8 text-white/65">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/65">
                 Pakistan is one of the most misunderstood travel destinations in
                 the world. Travellers should always stay informed and follow
                 official guidance, but thousands of local and international
                 visitors explore Pakistan every year.
               </p>
 
-              <p className="mt-5 text-base leading-8 text-white/65">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white/65">
                 Popular destinations such as Skardu, Hunza, Fairy Meadows,
                 Deosai National Park, Swat, Naran Kaghan, Lahore, and Islamabad
                 continue to welcome travellers from around the world.
               </p>
             </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              className="grid grid-cols-2 gap-3"
+            >
+              {karachiVisitImages.map((image) => (
+                <motion.div
+                  key={image}
+                  variants={fadeUp}
+                  className="relative h-48 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045] shadow-[0_20px_60px_rgba(0,0,0,0.28)]"
+                >
+                  <Image
+                    src={image}
+                    alt="Wojciech Kopec exploring Karachi with Gemini Explorer"
+                    fill
+                    className="object-cover transition duration-700 hover:scale-110"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/35 to-transparent" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="relative px-6 pt-0 pb-20">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
+              <motion.span
+                variants={fadeUp}
+                className="text-sm font-bold uppercase tracking-[0.24em] text-[#F59E0B]"
+              >
+                Karachi Experience
+              </motion.span>
+
+              <motion.h2
+                variants={fadeUp}
+                className="mt-4 max-w-xl text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl"
+              >
+                Exploring Karachi with{" "}
+                <span className="bg-gradient-to-r from-[#F59E0B] to-[#FFD36A] bg-clip-text text-transparent">
+                  Gemini Explorer
+                </span>
+              </motion.h2>
+
+              <motion.p
+                variants={fadeUp}
+                className="mt-6 text-base leading-8 text-white/65"
+              >
+                Wojciech Kopec, a visitor from Poland, recently explored Karachi and had an exceptional experience discovering the city&apos;s unique blend of culture, history, and modern urban life. Assisted by Gemini Explorer, he navigated Karachi&apos;s iconic landmarks, local attractions, and vibrant communities, gaining a deeper appreciation of one of Pakistan&apos;s most dynamic cities.
+              </motion.p>
+            </motion.div>
+
           </div>
         </section>
 

@@ -98,14 +98,14 @@ export default function AboutOwner() {
               className="text-base text-white/55 leading-relaxed mb-5 font-light"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              Fatima&apos;s connection with travel started at a young age. At just 16, she began exploring Pakistan, guided by a strong love for nature, adventure, and discovering places beyond the usual routes. What started as passion slowly became a lifelong journey.
+              Fatima&apos;s passion for travel began at the age of 16 and grew into a lifelong journey of exploration. With over 15 years of experience, she has traveled extensively across Pakistan, discovering iconic destinations such as Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, Deosai, and the stunning valleys of Kashmir.
             </motion.p>
             <motion.p
               variants={fadeUp}
               className="text-base text-white/55 leading-relaxed mb-8 font-light"
               style={{ fontFamily: "var(--font-inter)" }}
             >
-              With more than 15 years of travel experience, Fatima has explored Pakistan extensively. From the mountains of Swat, Kalam, Malam Jabba, Fairy Meadows, Hunza, Skardu, and Deosai, to the valleys of Kashmir including Ratti Gali, Taobat, Baboon Valley, and Kutora Lake, her footsteps cover some of the most breathtaking landscapes in the country.
+              What makes Fatima&apos;s story truly remarkable is her journey as both a traveler and a mother. As a solo female traveler, she continued exploring Pakistan&apos;s remote valleys, mountains, and challenging terrains while raising her children and often taking them along on her adventures. By successfully balancing family life with her love for travel, she has broken stereotypes and become an inspiration for women and families who aspire to explore Pakistan with confidence and freedom.
             </motion.p>
 
             {/* Signature quote */}
