@@ -20,17 +20,36 @@ const videos = [
 export default function WelcomePopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     // Randomly select a video
     const randomIndex = Math.floor(Math.random() * videos.length);
-    setSelectedVideo(videos[randomIndex]);
+    const videoPath = videos[randomIndex];
+    setSelectedVideo(videoPath);
 
-    // Show popup after a short delay
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1500);
-    return () => clearTimeout(timer);
+    // Preload the video
+    const video = document.createElement('video');
+    video.src = videoPath;
+    video.preload = 'auto';
+    video.onloadeddata = () => {
+      setIsVideoLoaded(true);
+      // Show popup after video is loaded
+      setTimeout(() => {
+        setIsOpen(true);
+      }, 500);
+    };
+    video.onerror = () => {
+      // If video fails to load, show popup anyway after delay
+      setTimeout(() => {
+        setIsOpen(true);
+      }, 2000);
+    };
+
+    return () => {
+      video.onloadeddata = null;
+      video.onerror = null;
+    };
   }, []);
 
   const handleClose = () => {
@@ -68,6 +87,11 @@ export default function WelcomePopup() {
 
             {/* Video Container */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-[#F59E0B]/20 border border-[#F59E0B]/30 bg-[#020817]">
+              {!isVideoLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-[#020817]">
+                  <div className="w-12 h-12 border-4 border-[#F59E0B]/30 border-t-[#F59E0B] rounded-full animate-spin" />
+                </div>
+              )}
               <video
                 src={selectedVideo}
                 className="w-full aspect-video"
@@ -76,6 +100,7 @@ export default function WelcomePopup() {
                 loop
                 playsInline
                 controls
+                onLoadedData={() => setIsVideoLoaded(true)}
               />
               
               {/* Gradient Overlay */}

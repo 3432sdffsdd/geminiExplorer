@@ -8,7 +8,7 @@ export default function PageLoader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,9 +28,7 @@ export default function PageLoader() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center gap-4 mb-8"
           >
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F59E0B] to-[#D97706] flex items-center justify-center shadow-[0_0_40px_rgba(245,158,11,0.4)]">
-              <Mountain className="w-9 h-9 text-white" strokeWidth={2} />
-            </div>
+            <img src="/logo.png" alt="Gemini Explorer Logo" className="w-40 h-40 object-contain" />
             <div className="text-center">
               <div
                 className="text-2xl font-black text-white tracking-tight"
@@ -53,7 +51,7 @@ export default function PageLoader() {
               className="h-full bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] rounded-full"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
-              transition={{ duration: 1.6, ease: "easeInOut" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             />
           </div>
 

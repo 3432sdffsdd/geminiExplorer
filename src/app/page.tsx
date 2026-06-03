@@ -12,14 +12,12 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollProgress from "@/components/ScrollProgress";
 import PageLoader from "@/components/PageLoader";
-import WelcomePopup from "@/components/WelcomePopup";
 
 export default function Home() {
   return (
     <>
       <PageLoader />
       <ScrollProgress />
-      <WelcomePopup />
       <main className="relative bg-[#020817] text-white">
         <Navbar />
         <Hero />
