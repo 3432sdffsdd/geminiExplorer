@@ -9,7 +9,6 @@ const achievements = [
   { icon: Globe, value: "15+", label: "Years Experience", color: "#F59E0B" },
   { icon: Star, value: "4.9★", label: "Average Rating", color: "#10B981" },
   { icon: Heart, value: "500+", label: "Tours Completed", color: "#EC4899" },
-  { icon: Award, value: "50+", label: "Countries Served", color: "#3B82F6" },
 ];
 
 export default function AboutOwner() {
@@ -30,7 +29,7 @@ export default function AboutOwner() {
             viewport={viewportConfig}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden h-[500px]">
+            <div className="relative rounded-3xl overflow-hidden h-[380px]">
               <Image
                 src="/images/fatima1.JPG"
                 alt="Your Local Travel Partner"
@@ -80,14 +79,14 @@ export default function AboutOwner() {
             </motion.span>
             <motion.h2
               variants={fadeUp}
-              className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-2 tracking-tight"
+              className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-2 tracking-tight"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               Meet Your Local
             </motion.h2>
             <motion.h2
               variants={fadeUp}
-              className="text-4xl sm:text-5xl font-bold text-gold-gradient leading-tight mb-6 tracking-tight"
+              className="text-3xl sm:text-4xl font-bold text-gold-gradient leading-tight mb-6 tracking-tight"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               Travel Partner

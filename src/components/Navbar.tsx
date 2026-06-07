@@ -8,13 +8,12 @@ import { Menu, X, Phone, Camera } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Tours", href: "/#tours" },
-  { label: "Experiences", href: "/#experiences" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Transport", href: "/transport" },
   { label: "Contact", href: "https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
 ];
 
-export default function Navbar() {
+export default function Navbar({ hidePlanButton = false }: { hidePlanButton?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -84,18 +83,20 @@ export default function Navbar() {
               >
                 <Camera className="h-5 w-5" />
               </a>
-              <Link
-                href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group ml-3 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/15 px-5 py-2.5 text-[12px] font-medium text-white/90 shadow-[0_12px_32px_rgba(0,0,0,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/10 hover:text-white"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
-                <span>Plan My Trip</span>
-                <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 text-white/70 transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-white/55 group-hover:text-white">
-                  →
-                </span>
-              </Link>
+              {!hidePlanButton && (
+                <Link
+                  href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group ml-3 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/15 px-5 py-2.5 text-[12px] font-medium text-white/90 shadow-[0_12px_32px_rgba(0,0,0,0.22)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/10 hover:text-white"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  <span>Plan My Trip</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25 text-white/70 transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-white/55 group-hover:text-white">
+                    →
+                  </span>
+                </Link>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -138,23 +139,25 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.06 }}
-                className="mt-4"
-              >
-                <Link
-                  href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                  className="px-8 py-3 rounded-full font-semibold text-[#020817] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] text-lg"
-                  style={{ fontFamily: "var(--font-poppins)" }}
+              {!hidePlanButton && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: navLinks.length * 0.06 }}
+                  className="mt-4"
                 >
-                  Plan My Trip
-                </Link>
-              </motion.div>
+                  <Link
+                    href="https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="px-8 py-3 rounded-full font-semibold text-[#020817] bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] text-lg"
+                    style={{ fontFamily: "var(--font-poppins)" }}
+                  >
+                    Plan My Trip
+                  </Link>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}

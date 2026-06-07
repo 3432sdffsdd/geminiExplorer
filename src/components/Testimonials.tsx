@@ -100,7 +100,7 @@ export default function Testimonials() {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5 tracking-tight"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-5 tracking-tight"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             Stories From{" "}

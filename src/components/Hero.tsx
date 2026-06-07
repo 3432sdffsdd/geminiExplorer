@@ -135,6 +135,23 @@ export default function Hero() {
               </span>
             </Link>
           </motion.div>
+
+          <div className="h-4" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            <a
+              href="#tours?openCustomTour=true"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-[#F59E0B]/40 bg-[#F59E0B]/10 px-8 py-4 text-[15px] font-bold text-[#FBBF24] transition-all duration-300 hover:bg-[#F59E0B]/20 hover:border-[#F59E0B]/60 hover:-translate-y-0.5"
+              style={{ fontFamily: "var(--font-inter)" }}
+            >
+              Can't find your Dream Destination? Make your own Custom Tour Program - Click Here
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.div>
         </div>
 
         <motion.div
