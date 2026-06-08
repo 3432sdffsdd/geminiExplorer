@@ -178,18 +178,6 @@ export default function NeelumValleyTourPoster() {
           {/* TOP INFO */}
           <section className={styles.topInfo}>
             <div className={styles.infoBox}>
-              <div className={styles.infoIcon}>◆</div>
-              <div>
-                <h3>Package Detail</h3>
-                <p>
-                  Contact for
-                  <br />
-                  details
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.infoBox}>
               <div className={styles.infoIcon}>●</div>
               <div>
                 <h3>Main Pick Up Point</h3>
