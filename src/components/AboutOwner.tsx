@@ -31,7 +31,7 @@ export default function AboutOwner() {
           >
             <div className="relative rounded-3xl overflow-hidden h-[380px]">
               <Image
-                src="/images/fatima1.JPG"
+                src="/images/fatimaintro.jpeg"
                 alt="Your Local Travel Partner"
                 fill
                 className="object-cover"

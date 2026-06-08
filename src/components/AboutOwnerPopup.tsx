@@ -39,15 +39,22 @@ export default function AboutOwnerPopup({ onClose }: AboutOwnerPopupProps) {
             <X className="h-4 w-4" />
           </button>
 
-          <div className="relative h-64 overflow-hidden">
-            <Image
-              src="/images/fatima1.JPG"
-              alt="Fatima Ali - Your Local Travel Partner"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-              priority
-            />
+          <div className="relative h-72 overflow-hidden bg-black">
+            <motion.div
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="relative h-full w-full"
+            >
+              <Image
+                src="/images/fatimaintro.jpeg"
+                alt="Fatima Ali - Your Local Travel Partner"
+                fill
+                className="object-contain object-center"
+                sizes="100vw"
+                priority
+              />
+            </motion.div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -82,18 +89,13 @@ export default function AboutOwnerPopup({ onClose }: AboutOwnerPopupProps) {
                   key={label}
                   className="rounded-xl border border-gray-200 bg-gray-50 p-2 text-center"
                 >
-                  <Icon
-                    className="mx-auto mb-1 h-4 w-4"
-                    style={{ color }}
-                  />
+                  <Icon className="mx-auto mb-1 h-4 w-4" style={{ color }} />
 
                   <div className="text-sm font-bold" style={{ color }}>
                     {value}
                   </div>
 
-                  <div className="text-[9px] text-gray-500">
-                    {label}
-                  </div>
+                  <div className="text-[9px] text-gray-500">{label}</div>
                 </div>
               ))}
             </div>

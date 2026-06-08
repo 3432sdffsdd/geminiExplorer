@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Camera, Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./poster.module.css";
 
 export default function FairyMeadowsTourPoster() {
@@ -182,18 +183,6 @@ export default function FairyMeadowsTourPoster() {
           {/* TOP INFO */}
           <section className={styles.topInfo}>
             <div className={styles.infoBox}>
-              <div className={styles.infoIcon}>◆</div>
-              <div>
-                <h3>Package Detail</h3>
-                <p>
-                  Contact for
-                  <br />
-                  details
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.infoBox}>
               <div className={styles.infoIcon}>●</div>
               <div>
                 <h3>Main Pick Up Points</h3>
@@ -242,7 +231,7 @@ export default function FairyMeadowsTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&q=90"
+              image="/images/lulusar lake.jpeg"
               items={[
                 "Departure from Islamabad",
                 "Short stops on the way",
@@ -259,7 +248,7 @@ export default function FairyMeadowsTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&q=90"
+              image="/images/fairy2.jpeg"
               items={[
                 "Early morning breakfast",
                 "Departure towards Raikot Bridge",
@@ -275,7 +264,7 @@ export default function FairyMeadowsTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=90"
+              image="/images/nangaparbat.jpg"
               items={[
                 "Breakfast at Fairy Meadows",
                 "Free time to explore Fairy Meadows",
@@ -291,7 +280,7 @@ export default function FairyMeadowsTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=90"
+              image="/images/chillas.webp"
               items={[
                 "Breakfast at Fairy Meadows",
                 "Relax and enjoy the morning view of Nanga Parbat",
@@ -307,7 +296,7 @@ export default function FairyMeadowsTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Early morning breakfast",
                 "Sightseeing on the way back",
@@ -493,6 +482,9 @@ function DayCard({
   items: string[];
   styles: any;
 }) {
+  const isDay1 = day === "DAY 1";
+  const isDay2 = day === "DAY 2";
+  
   return (
     <article className={styles.dayCard}>
       <div className={styles.dayBody}>
@@ -507,7 +499,27 @@ function DayCard({
         </ul>
       </div>
 
-      <img className={styles.dayImg} src={image} alt={day} />
+      {isDay1 ? (
+        <motion.img
+          initial={{ scale: 1.8 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className={styles.dayImg}
+          src={image}
+          alt={day}
+        />
+      ) : isDay2 ? (
+        <motion.img
+          initial={{ scale: 2.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          className={styles.dayImg}
+          src={image}
+          alt={day}
+        />
+      ) : (
+        <img className={styles.dayImg} src={image} alt={day} />
+      )}
     </article>
   );
 }
