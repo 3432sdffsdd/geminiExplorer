@@ -7,6 +7,7 @@ import { Camera, X, Play } from "lucide-react";
 import { fadeUp, staggerContainer, viewportConfig } from "@/lib/animations";
 
 const galleryImages = [
+  { src: "/images/mycoll.mp4", alt: "Pakistan through our lens video", tall: true, type: "video" },
   { src: "/images/pakistan.mp4", alt: "Pakistan video", tall: true, type: "video" },
   { src: "/images/pakistan2.mp4", alt: "Pakistan video", tall: true, type: "video" },
   { src: "/images/pakistan4.mp4", alt: "Pakistan video", tall: true, type: "video" },
@@ -97,6 +98,18 @@ export default function Gallery() {
               className="break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer"
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
               onClick={() => img.type === "video" && setSelectedVideo(img.src)}
+              onMouseEnter={(e) => {
+                if (img.type !== "video") return;
+                const video = e.currentTarget.querySelector("video");
+                video?.play().catch(() => {});
+              }}
+              onMouseLeave={(e) => {
+                if (img.type !== "video") return;
+                const video = e.currentTarget.querySelector("video");
+                if (!video) return;
+                video.pause();
+                video.currentTime = 0;
+              }}
             >
               <div className={`relative w-full ${img.tall ? "h-72 md:h-80" : "h-44 md:h-52"}`}>
                 {img.type === "video" ? (
@@ -105,6 +118,8 @@ export default function Gallery() {
                     className="w-full h-full object-cover"
                     muted
                     loop
+                    playsInline
+                    preload="metadata"
                     onClick={(e) => e.stopPropagation()}
                   />
                 ) : (

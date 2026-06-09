@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Camera, Phone, Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./poster.module.css";
+import MediumImagePopup from "@/components/MediumImagePopup";
 
 export default function HunzaTourPoster() {
   const [logoError, setLogoError] = useState(false);
@@ -203,14 +205,7 @@ export default function HunzaTourPoster() {
               </div>
             </div>
 
-            <div className={`${styles.infoBox} ${styles.imageBox}`}>
-              <img
-                className={styles.miniImage}
-                src="https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=700&q=90"
-                alt="Hunza landscape"
-              />
-            </div>
-          </section>
+                      </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -226,7 +221,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=500&q=90"
+              image="/images/hunza1.jpeg"
               items={[
                 "Early morning departure from Islamabad",
                 "Travel towards Naran or Chilas depending on route condition",
@@ -243,7 +238,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&q=90"
+              image="/images/chillas.webp"
               items={[
                 "Breakfast at hotel",
                 "Continue journey towards Hunza via Karakoram Highway",
@@ -263,7 +258,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=90"
+              image="/images/karemabad.jpg"
               items={[
                 "Breakfast in Hunza",
                 "Explore culture and history of Central Hunza",
@@ -281,7 +276,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=90"
+              image="/images/khun.jpg"
               items={[
                 "Breakfast in Hunza",
                 "Full-day excursion towards Upper Hunza",
@@ -300,7 +295,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=90"
+              image="/images/hunzaday5.jpeg"
               items={[
                 "Breakfast in Hunza",
                 "Begin return journey towards Naran / Chilas",
@@ -317,7 +312,7 @@ export default function HunzaTourPoster() {
             <DayCard
               icon="★"
               day="DAY 6"
-              image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Breakfast in Naran / Chilas",
                 "Departure for Islamabad via same route",
@@ -524,6 +519,8 @@ function DayCard({
   items: string[];
   styles: any;
 }) {
+  const isDay1 = day === "DAY 1";
+  
   return (
     <article className={styles.dayCard}>
       <div className={styles.dayBody}>
@@ -538,7 +535,22 @@ function DayCard({
         </ul>
       </div>
 
-      <img className={styles.dayImg} src={image} alt={day} />
+      {isDay1 ? (
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <motion.img
+            initial={{ scale: 3.5 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 3.0, ease: "easeOut" }}
+            className={styles.dayImg}
+            src={image}
+            alt={day}
+          />
+        </MediumImagePopup>
+      ) : (
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <img className={styles.dayImg} src={image} alt={day} />
+        </MediumImagePopup>
+      )}
     </article>
   );
 }

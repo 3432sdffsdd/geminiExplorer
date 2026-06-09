@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Camera, Phone, Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import styles from "./poster.module.css";
+import MediumImagePopup from "@/components/MediumImagePopup";
 
 export default function NeelumValleyTourPoster() {
   const [logoError, setLogoError] = useState(false);
@@ -203,14 +204,7 @@ export default function NeelumValleyTourPoster() {
               </div>
             </div>
 
-            <div className={`${styles.infoBox} ${styles.imageBox}`}>
-              <img
-                className={styles.miniImage}
-                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=90"
-                alt="Neelum Valley landscape"
-              />
-            </div>
-          </section>
+                      </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -226,7 +220,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=500&q=90"
+              image="/images/day1  nelum.jpg"
               items={[
                 "Start journey from Islamabad towards Neelum Valley",
                 "Breakfast in Muzaffarabad",
@@ -243,7 +237,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&q=90"
+              image="/images/day 2 neelum.jpg"
               items={[
                 "Breakfast at hotel",
                 "Drive towards Dowarian",
@@ -260,7 +254,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=90"
+              image="/images/day3 neelum.jpg"
               items={[
                 "Breakfast in Sharda",
                 "Travel from Sharda to Kel",
@@ -278,7 +272,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=90"
+              image="/images/neelum day 4.jpg"
               items={[
                 "Breakfast in Kel",
                 "Full-day jeep excursion to Taobat",
@@ -296,7 +290,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=90"
+              image="/images/neelum day 5.jpg"
               items={[
                 "Breakfast in Kel",
                 "Drive back towards Muzaffarabad",
@@ -312,7 +306,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="★"
               day="DAY 6"
-              image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Breakfast in Muzaffarabad",
                 "Departure for Islamabad",
@@ -532,7 +526,9 @@ function DayCard({
         </ul>
       </div>
 
-      <img className={styles.dayImg} src={image} alt={day} />
+      <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+        <img className={styles.dayImg} src={image} alt={day} />
+      </MediumImagePopup>
     </article>
   );
 }

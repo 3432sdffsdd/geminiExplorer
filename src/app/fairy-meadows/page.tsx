@@ -6,6 +6,7 @@ import { Camera, Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./poster.module.css";
+import MediumImagePopup from "@/components/MediumImagePopup";
 
 export default function FairyMeadowsTourPoster() {
   const [logoError, setLogoError] = useState(false);
@@ -208,14 +209,7 @@ export default function FairyMeadowsTourPoster() {
               </div>
             </div>
 
-            <div className={`${styles.infoBox} ${styles.imageBox}`}>
-              <img
-                className={styles.miniImage}
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=90"
-                alt="Fairy Meadows and Nanga Parbat"
-              />
-            </div>
-          </section>
+                      </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -500,25 +494,31 @@ function DayCard({
       </div>
 
       {isDay1 ? (
-        <motion.img
-          initial={{ scale: 1.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className={styles.dayImg}
-          src={image}
-          alt={day}
-        />
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <motion.img
+            initial={{ scale: 1.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className={styles.dayImg}
+            src={image}
+            alt={day}
+          />
+        </MediumImagePopup>
       ) : isDay2 ? (
-        <motion.img
-          initial={{ scale: 2.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.8, ease: "easeOut" }}
-          className={styles.dayImg}
-          src={image}
-          alt={day}
-        />
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <motion.img
+            initial={{ scale: 2.2 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.8, ease: "easeOut" }}
+            className={styles.dayImg}
+            src={image}
+            alt={day}
+          />
+        </MediumImagePopup>
       ) : (
-        <img className={styles.dayImg} src={image} alt={day} />
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <img className={styles.dayImg} src={image} alt={day} />
+        </MediumImagePopup>
       )}
     </article>
   );

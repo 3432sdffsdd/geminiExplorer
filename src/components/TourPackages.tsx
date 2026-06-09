@@ -68,12 +68,12 @@ const packages = [
     name: "Hunza",
     duration: "6 Days",
     image:
-      "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=800&q=80",
+      "/images/hunzacard.avif",
     link: "/hunza",
     title: "Best Time to Visit Hunza",
     subtitle: "April to October",
     description: "Hunza is beautiful throughout this period, with pleasant weather, open routes, and amazing mountain views. Spring brings blossoms, summer is best for family tours and sightseeing, while autumn offers golden colors and peaceful views.",
-    imageUrl: "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&q=90",
+    imageUrl: "/images/hunzacard.avif",
     bestMonths: [
       { month: "April", benefit: "Cherry blossoms and spring beauty" },
       { month: "May", benefit: "Pleasant weather and blooming valleys" },
@@ -91,7 +91,7 @@ const packages = [
     title: "Best Time to Visit Skardu",
     subtitle: "May to October",
     description: "Skardu is best visited during late spring, summer, and early autumn. During this time, the weather is pleasant, roads are more accessible, and famous places like Shangrila, Upper Kachura Lake, Deosai Plains, Shigar Valley, Khaplu, and Katpana Desert are easier to explore.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=90",
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     bestMonths: [
       { month: "May", benefit: "Spring blossoms and pleasant weather" },
       { month: "June", benefit: "Best for families and first-time visitors" },
@@ -104,12 +104,12 @@ const packages = [
     name: "Neelum Valley",
     duration: "6 Days",
     image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
+      "/images/neelumcard.jpg",
     link: "/neelum-valley",
     title: "Best Time to Visit Neelum Valley",
     subtitle: "June to September",
     description: "Neelum Valley is at its most beautiful during summer, when the weather is pleasant, the mountains are green, and upper areas like Kel, Arang Kel, Taobat, and Ratti Gali Lake are more accessible. Ratti Gali Lake is usually best from July to September when the lake is unfrozen and the trekking route is open.",
-    imageUrl: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=90",
+    imageUrl: "/images/neelumcard.jpg",
     bestMonths: [
       { month: "June", benefit: "Pleasant weather and green mountains" },
       { month: "July", benefit: "Best time for Ratti Gali Lake and upper areas" },
@@ -121,12 +121,12 @@ const packages = [
     name: "Kumrat",
     duration: "5 Days",
     image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+      "/images/kumratcard.avif",
     link: "/kumrat",
     title: "Best Time to Visit Kumrat",
     subtitle: "May to September",
     description: "Kumrat is best visited from May to September because the valley is lush green, rivers and waterfalls are active, and most major attractions are accessible. Roads can be rough in some parts, so local jeep use is often needed.",
-    imageUrl: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=90",
+    imageUrl: "/images/kumratcard.avif",
     bestMonths: [
       { month: "May", benefit: "Fresh greenery and fewer crowds" },
       { month: "June", benefit: "Best weather and beautiful river views" },
@@ -139,12 +139,12 @@ const packages = [
     name: "Chitral",
     duration: "5 Days",
     image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
+      "/images/chitralcard.avif",
     link: "/chitral",
     title: "Best Time to Visit Chitral",
     subtitle: "April to October",
     description: "Chitral and Kalash are generally best from April to October, but for comfortable weather and good scenery, May–June and September–October are usually the best. Summer is popular, but July/August can be hotter in Chitral town and busier. Autumn gives golden colors and peaceful photography.",
-    imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=90",
+    imageUrl: "/images/chitralcard.avif",
     bestMonths: [
       { month: "April", benefit: "Spring bloom and mild weather" },
       { month: "May", benefit: "Comfortable temperatures and clear views" },
@@ -157,12 +157,12 @@ const packages = [
     name: "Fairy Meadows",
     duration: "5 Days",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+      "/images/fairycard.avif",
     link: "/fairy-meadows",
     title: "Best Time to Visit Fairy Meadows",
     subtitle: "June to October",
     description: "Fairy Meadows is best when access is open and the weather is stable. Many travel guides mention June to October as the main visiting season, with July–August as peak season and September–October better for quieter trips and photography.",
-    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=90",
+    imageUrl: "/images/fairycard.avif",
     bestMonths: [
       { month: "June", benefit: "Access roads open, stable weather" },
       { month: "July", benefit: "Peak season, best views" },
@@ -328,19 +328,53 @@ Please share a customized tour plan and estimated cost.`;
               onClick={() => handleCardClick(pkg)}
             >
               <div className="relative h-[280px] overflow-hidden">
-                <motion.div
-                  className="absolute inset-0"
-                  whileHover={{ scale: 1.06 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <Image
-                    src={pkg.image}
-                    alt={pkg.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 16vw"
-                  />
-                </motion.div>
+                {pkg.name === "Kumrat" ? (
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={{ scale: 4.0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 3.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.06 }}
+                  >
+                    <Image
+                      src={pkg.image}
+                      alt={pkg.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 16vw"
+                    />
+                  </motion.div>
+                ) : pkg.name === "Hunza" ? (
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={{ scale: 4.0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 3.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.06 }}
+                  >
+                    <Image
+                      src={pkg.image}
+                      alt={pkg.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 16vw"
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    className="absolute inset-0"
+                    whileHover={{ scale: 1.06 }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Image
+                      src={pkg.image}
+                      alt={pkg.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 16vw"
+                    />
+                  </motion.div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#03100f] via-[#03100f]/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3.5">
                   <h3 className="text-sm font-semibold text-white leading-tight" style={{ fontFamily: "var(--font-inter)" }}>

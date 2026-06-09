@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhyVisit from "@/components/WhyVisit";
@@ -18,7 +18,16 @@ import PageLoader from "@/components/PageLoader";
 import AboutOwnerPopup from "@/components/AboutOwnerPopup";
 
 export default function Home() {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const hasSeenOwnerPopup = sessionStorage.getItem("hasSeenOwnerPopup");
+
+    if (!hasSeenOwnerPopup) {
+      setShowPopup(true);
+      sessionStorage.setItem("hasSeenOwnerPopup", "true");
+    }
+  }, []);
 
   const handleClosePopup = () => {
     setShowPopup(false);

@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Camera, Phone, Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./poster.module.css";
+import MediumImagePopup from "@/components/MediumImagePopup";
 
 export default function KumratTourPoster() {
   const [logoError, setLogoError] = useState(false);
@@ -203,14 +205,7 @@ export default function KumratTourPoster() {
               </div>
             </div>
 
-            <div className={`${styles.infoBox} ${styles.imageBox}`}>
-              <img
-                className={styles.miniImage}
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700&q=90"
-                alt="Kumrat Valley landscape"
-              />
-            </div>
-          </section>
+                      </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -226,7 +221,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&q=90"
+              image="/images/kumrat day 1.jpeg"
               items={[
                 "Early morning departure from Islamabad",
                 "Breakfast stop on the way",
@@ -242,7 +237,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&q=90"
+              image="/images/kumratday2.webp"
               items={[
                 "Breakfast at hotel / camp",
                 "Explore the beautiful Kumrat Valley",
@@ -259,7 +254,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=90"
+              image="/images/kumratday3.jpeg"
               items={[
                 "Breakfast in Kumrat Valley",
                 "Local Jeep excursion",
@@ -276,7 +271,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=90"
+              image="/images/kumratday4.webp"
               items={[
                 "Breakfast in Kumrat Valley",
                 "Leisure day to enjoy the natural beauty",
@@ -294,7 +289,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Breakfast early morning",
                 "Departure for Islamabad",
@@ -500,6 +495,8 @@ function DayCard({
   items: string[];
   styles: any;
 }) {
+  const isDay1 = day === "DAY 1";
+  
   return (
     <article className={styles.dayCard}>
       <div className={styles.dayBody}>
@@ -514,7 +511,22 @@ function DayCard({
         </ul>
       </div>
 
-      <img className={styles.dayImg} src={image} alt={day} />
+      {isDay1 ? (
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <motion.img
+            initial={{ scale: 4.0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 3.5, ease: "easeOut" }}
+            className={styles.dayImg}
+            src={image}
+            alt={day}
+          />
+        </MediumImagePopup>
+      ) : (
+        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+          <img className={styles.dayImg} src={image} alt={day} />
+        </MediumImagePopup>
+      )}
     </article>
   );
 }
