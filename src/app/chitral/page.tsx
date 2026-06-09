@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Camera, Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import styles from "./poster.module.css";
+import MediumImagePopup from "@/components/MediumImagePopup";
 
 export default function ChitralTourPoster() {
   const [logoError, setLogoError] = useState(false);
@@ -209,14 +210,7 @@ export default function ChitralTourPoster() {
               </div>
             </div>
 
-            <div className={`${styles.infoBox} ${styles.imageBox}`}>
-              <img
-                className={styles.miniImage}
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=90"
-                alt="Mountain landscape"
-              />
-            </div>
-          </section>
+                      </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -232,7 +226,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&q=90"
+              image="/images/chillas.webp"
               items={[
                 "Early morning departure from designated spot in Islamabad for Dir",
                 "Travel towards Lower Pech / Lowari Chitral",
@@ -248,7 +242,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&q=90"
+              image="/images/chitral day 2.jpeg"
               items={[
                 "Breakfast at hotel",
                 "Enjoy beautiful views of Tirich Mir, the highest peak of Hindukush Range",
@@ -266,7 +260,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=90"
+              image="/images/chitral day 3.avif"
               items={[
                 "Breakfast at hotel",
                 "Departure for Kalash Valley",
@@ -283,7 +277,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=90"
+              image="/images/chitral day 4.avif"
               items={[
                 "Breakfast in Bumburate",
                 "Free day to relax and enjoy breathtaking views of Kalash Valley",
@@ -299,7 +293,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Breakfast early morning",
                 "Departure from Bumburate for Islamabad",
@@ -508,7 +502,9 @@ function DayCard({
         </ul>
       </div>
 
-      <img className={styles.dayImg} src={image} alt={day} />
+      <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+        <img className={styles.dayImg} src={image} alt={day} />
+      </MediumImagePopup>
     </article>
   );
 }
