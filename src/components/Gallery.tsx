@@ -7,6 +7,7 @@ import { Camera, X, Play } from "lucide-react";
 import { fadeUp, staggerContainer, viewportConfig } from "@/lib/animations";
 
 const galleryImages = [
+  { src: "/images/VID-20260602-WA0150.mp4", alt: "Pakistan through our lens video", tall: true, type: "video" },
   { src: "/images/mycoll.mp4", alt: "Pakistan through our lens video", tall: true, type: "video" },
   { src: "/images/pakistan.mp4", alt: "Pakistan video", tall: true, type: "video" },
   { src: "/images/pakistan2.mp4", alt: "Pakistan video", tall: true, type: "video" },

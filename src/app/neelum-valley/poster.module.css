@@ -37,7 +37,7 @@
       rgba(255, 255, 255, 0.76) 51%,
       rgba(255, 255, 255, 0.08) 78%
     ),
-    url("https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=95");
+    url("/images/neelumcard.jpg");
   background-size: cover;
   background-position: center right;
 }

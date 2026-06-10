@@ -480,8 +480,15 @@ function DayCard({
   const isDay2 = day === "DAY 2";
   
   return (
-    <article className={styles.dayCard}>
-      <div className={styles.dayBody}>
+    <article 
+      className={styles.dayCard}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>

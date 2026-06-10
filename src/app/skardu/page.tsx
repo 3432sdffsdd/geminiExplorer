@@ -292,7 +292,7 @@ export default function SkarduTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="/images/isbfree.webp"
+              image="/images/skardu5.jpeg"
               items={[
                 "Breakfast in Skardu",
                 "Full-day excursion to Deosai National Park",
@@ -311,7 +311,7 @@ export default function SkarduTourPoster() {
             <DayCard
               icon="★"
               day="DAY 6"
-              image="https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=500&q=90"
+              image="/images/isbfree.webp"
               items={[
                 "Breakfast in Skardu",
                 "Short visit to Chunda Valley Viewpoint if time allows",
@@ -518,8 +518,15 @@ function DayCard({
   styles: any;
 }) {
   return (
-    <article className={styles.dayCard}>
-      <div className={styles.dayBody}>
+    <article 
+      className={styles.dayCard}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>

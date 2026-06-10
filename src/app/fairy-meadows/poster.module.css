@@ -37,7 +37,7 @@
       rgba(255, 255, 255, 0.76) 51%,
       rgba(255, 255, 255, 0.08) 78%
     ),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=95");
+    url("/images/fairycard.avif");
   background-size: cover;
   background-position: center right;
 }

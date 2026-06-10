@@ -242,7 +242,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="/images/chitral day 2.jpeg"
+              image="/images/chitralday2.jfif"
               items={[
                 "Breakfast at hotel",
                 "Enjoy beautiful views of Tirich Mir, the highest peak of Hindukush Range",
@@ -260,7 +260,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="/images/chitral day 3.avif"
+              image="/images/chitralday3.jfif"
               items={[
                 "Breakfast at hotel",
                 "Departure for Kalash Valley",
@@ -277,7 +277,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="/images/chitral day 4.avif"
+              image="/images/chitralday4.jfif"
               items={[
                 "Breakfast in Bumburate",
                 "Free day to relax and enjoy breathtaking views of Kalash Valley",
@@ -489,8 +489,15 @@ function DayCard({
   styles: any;
 }) {
   return (
-    <article className={styles.dayCard}>
-      <div className={styles.dayBody}>
+    <article 
+      className={styles.dayCard}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>

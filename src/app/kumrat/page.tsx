@@ -221,7 +221,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="/images/kumrat day 1.jpeg"
+              image="/images/kumrat1.jpeg"
               items={[
                 "Early morning departure from Islamabad",
                 "Breakfast stop on the way",
@@ -237,7 +237,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="/images/kumratday2.webp"
+              image="/images/kumrat2.jfif"
               items={[
                 "Breakfast at hotel / camp",
                 "Explore the beautiful Kumrat Valley",
@@ -254,7 +254,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="/images/kumratday3.jpeg"
+              image="/images/kumrat3.jfif"
               items={[
                 "Breakfast in Kumrat Valley",
                 "Local Jeep excursion",
@@ -271,7 +271,7 @@ export default function KumratTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="/images/kumratday4.webp"
+              image="/images/kumrat4.jfif"
               items={[
                 "Breakfast in Kumrat Valley",
                 "Leisure day to enjoy the natural beauty",
@@ -496,10 +496,18 @@ function DayCard({
   styles: any;
 }) {
   const isDay1 = day === "DAY 1";
+  const isDay3 = day === "DAY 3";
   
   return (
-    <article className={styles.dayCard}>
-      <div className={styles.dayBody}>
+    <article 
+      className={styles.dayCard}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>
@@ -511,12 +519,12 @@ function DayCard({
         </ul>
       </div>
 
-      {isDay1 ? (
+      {(isDay1 || isDay3) ? (
         <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
           <motion.img
-            initial={{ scale: 4.0 }}
+            initial={{ scale: 5.0 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 3.5, ease: "easeOut" }}
+            transition={{ duration: 4.0, ease: "easeOut" }}
             className={styles.dayImg}
             src={image}
             alt={day}

@@ -220,7 +220,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 1"
-              image="/images/day1  nelum.jpg"
+              image="/images/nelum1.jfif"
               items={[
                 "Start journey from Islamabad towards Neelum Valley",
                 "Breakfast in Muzaffarabad",
@@ -237,7 +237,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="◉"
               day="DAY 2"
-              image="/images/day 2 neelum.jpg"
+              image="/images/nelum2.jfif"
               items={[
                 "Breakfast at hotel",
                 "Drive towards Dowarian",
@@ -254,7 +254,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="♟"
               day="DAY 3"
-              image="/images/day3 neelum.jpg"
+              image="/images/nelum3.jfif"
               items={[
                 "Breakfast in Sharda",
                 "Travel from Sharda to Kel",
@@ -272,7 +272,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="/images/neelum day 4.jpg"
+              image="/images/nelum4.jfif"
               items={[
                 "Breakfast in Kel",
                 "Full-day jeep excursion to Taobat",
@@ -290,7 +290,7 @@ export default function NeelumValleyTourPoster() {
             <DayCard
               icon="▣"
               day="DAY 5"
-              image="/images/neelum day 5.jpg"
+              image="/images/nelum5.jfif"
               items={[
                 "Breakfast in Kel",
                 "Drive back towards Muzaffarabad",
@@ -513,8 +513,15 @@ function DayCard({
   styles: any;
 }) {
   return (
-    <article className={styles.dayCard}>
-      <div className={styles.dayBody}>
+    <article 
+      className={styles.dayCard}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>
