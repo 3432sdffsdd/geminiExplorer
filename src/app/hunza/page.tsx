@@ -74,7 +74,6 @@ export default function HunzaTourPoster() {
               +92 300 3667466
             </a>
 
-            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md md:hidden"
@@ -97,8 +96,8 @@ export default function HunzaTourPoster() {
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl border border-white/20 bg-black/95 p-4 shadow-xl md:hidden">
-            <div className="mb-4 pb-4 border-b border-white/10">
+          <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl border border-white/20 bg-black/95 p-4 shadow-xl md:hidden">
+            <div className="mb-4 border-b border-white/10 pb-4">
               <p className="text-[14px] font-black uppercase tracking-wide text-white">
                 Gemini Explorer
               </p>
@@ -106,25 +105,56 @@ export default function HunzaTourPoster() {
                 Dream • Discover • Explore
               </p>
             </div>
+
             <nav className="flex flex-col gap-3">
-              <Link href="/" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Home
               </Link>
-              <Link href="/#tours" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link
+                href="/#tours"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Tours
               </Link>
-              <Link href="/#experiences" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link
+                href="/#experiences"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Experiences
               </Link>
-              <Link href="/#gallery" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link
+                href="/#gallery"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Gallery
               </Link>
-              <Link href="/#transport" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link
+                href="/#transport"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Transport
               </Link>
-              <Link href="/#contact" className="text-[13px] font-extrabold text-white hover:text-white/70" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link
+                href="/#contact"
+                className="text-[13px] font-extrabold text-white hover:text-white/70"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Contact
               </Link>
+
               <a
                 href="tel:+923003667466"
                 className="flex items-center gap-2 rounded-full px-3 py-2 text-[12px] font-extrabold text-white"
@@ -138,15 +168,15 @@ export default function HunzaTourPoster() {
       </header>
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed left-4 bottom-4 z-[9998] flex flex-col items-center gap-1 md:left-6 md:bottom-6">
+      <div className="fixed bottom-4 left-4 z-[9998] flex flex-col items-center gap-1 md:bottom-6 md:left-6">
         <a
           href="https://wa.me/923003667466?text=I%20want%20to%20inquire%20about%20Hunza%20package"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)] hover:scale-105 transition-all duration-300"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_40px_rgba(37,211,102,0.6)]"
         >
-          <MessageCircle className="w-5 h-5 text-white fill-white" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#F59E0B] border-2 border-black" />
+          <MessageCircle className="h-5 w-5 fill-white text-white" />
+          <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border-2 border-black bg-[#F59E0B]" />
         </a>
         <span className="text-xs font-bold text-black drop-shadow-md">Chat with us</span>
       </div>
@@ -170,7 +200,8 @@ export default function HunzaTourPoster() {
               <div className={styles.locationLine}>
                 <span className={styles.locationPin} />
                 <p>
-                  Islamabad • Naran / Chilas • Hunza •<br />
+                  Islamabad • Naran / Chilas • Hunza •
+                  <br />
                   Khunjerab Pass • Hunza • Naran / Chilas • Islamabad
                 </p>
               </div>
@@ -204,8 +235,7 @@ export default function HunzaTourPoster() {
                 </ul>
               </div>
             </div>
-
-                      </section>
+          </section>
 
           {/* ITINERARY TITLE */}
           <section className={styles.sectionHeading}>
@@ -416,8 +446,8 @@ export default function HunzaTourPoster() {
                 <span className={styles.smallIcon}>◎</span> BEST TIME TO VISIT
               </h3>
               <p>
-                April to August is the best time to visit Hunza, when the
-                weather is pleasant and routes are open. Spring brings blossoms, while summer is best for family tours.
+                April to August is the best time to visit Hunza, when the weather is pleasant
+                and routes are open. Spring brings blossoms, while summer is best for family tours.
               </p>
             </div>
 
@@ -520,17 +550,17 @@ function DayCard({
   styles: any;
 }) {
   const isDay1 = day === "DAY 1";
-  
+
   return (
-    <article 
+    <article
       className={styles.dayCard}
       style={{
         backgroundImage: `url(${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: isDay1 ? "center 35%" : "center",
       }}
     >
-      <div className={styles.dayBody} style={{ background: 'rgba(255, 255, 255, 0.92)' }}>
+      <div className={styles.dayBody} style={{ background: "rgba(255, 255, 255, 0.92)" }}>
         <div className={styles.dayTitle}>
           <span className={styles.dayIcon}>{icon}</span> {day}
         </div>
@@ -542,22 +572,24 @@ function DayCard({
         </ul>
       </div>
 
-      {isDay1 ? (
-        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
-          <motion.img
-            initial={{ scale: 0.3 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 3.0, ease: "easeOut" }}
-            className={styles.dayImg}
-            src={image}
-            alt={day}
-          />
-        </MediumImagePopup>
-      ) : (
-        <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
-          <img className={styles.dayImg} src={image} alt={day} />
-        </MediumImagePopup>
-      )}
+      <div className={styles.dayImgHolder}>
+        {isDay1 ? (
+          <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+            <motion.img
+              initial={{ scale: 0.3 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 3.0, ease: "easeOut" }}
+              className={`${styles.dayImg} ${styles.day1Img}`}
+              src={image}
+              alt={day}
+            />
+          </MediumImagePopup>
+        ) : (
+          <MediumImagePopup imageSrc={image} alt={`${day} Image`}>
+            <img className={styles.dayImg} src={image} alt={day} />
+          </MediumImagePopup>
+        )}
+      </div>
     </article>
   );
 }

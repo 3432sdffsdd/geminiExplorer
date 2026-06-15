@@ -62,7 +62,13 @@ export default function BestTimePopup({
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-3 backdrop-blur-[4px] sm:items-center sm:p-5"
-      onClick={onClose}
+      onClick={() => {
+        if (onViewDetails) {
+          onViewDetails();
+        } else {
+          onClose?.();
+        }
+      }}
     >
       <div
         className="relative flex max-h-[92vh] w-full max-w-[900px] flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_30px_100px_rgba(0,0,0,0.35)]"
@@ -70,7 +76,13 @@ export default function BestTimePopup({
       >
         {/* Close Button */}
         <button
-          onClick={onClose}
+          onClick={() => {
+            if (onViewDetails) {
+              onViewDetails();
+            } else {
+              onClose?.();
+            }
+          }}
           aria-label="Close"
           className="absolute right-5 top-5 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-white text-black shadow-xl ring-1 ring-black/10 transition hover:scale-105 hover:bg-black hover:text-white"
         >

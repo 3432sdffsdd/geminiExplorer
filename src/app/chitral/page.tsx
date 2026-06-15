@@ -277,7 +277,7 @@ export default function ChitralTourPoster() {
             <DayCard
               icon="⌂"
               day="DAY 4"
-              image="/images/chitralday4.jfif"
+              image="/images/chitralday4.jpg"
               items={[
                 "Breakfast in Bumburate",
                 "Free day to relax and enjoy breathtaking views of Kalash Valley",
