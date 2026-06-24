@@ -50,7 +50,10 @@ export default function TrustSection() {
         className="relative overflow-hidden rounded-[32px] bg-cover bg-center shadow-2xl"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(1,12,13,.97) 0%, rgba(1,12,13,.88) 36%, rgba(1,12,13,.62) 65%, rgba(1,12,13,.80) 100%), url('/images/travel-confidence-bg.png')",
+            "linear-gradient(90deg, rgba(1,12,13,.97) 0%, rgba(1,12,13,.88) 36%, rgba(1,12,13,.62) 65%, rgba(1,12,13,.80) 100%), url('/images/bg.jpeg')",
+          backgroundSize: "auto, 70%",
+          backgroundPosition: "center, center",
+          backgroundRepeat: "no-repeat, no-repeat",
         }}
       >
         <div className="grid min-h-[720px] grid-cols-1 gap-14 px-8 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:px-24 xl:px-28">

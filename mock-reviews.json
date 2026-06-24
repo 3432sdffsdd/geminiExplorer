@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "asdfgh",
+    "location": "kar",
+    "tourPackage": "Hunza Valley Tour",
+    "rating": 5,
+    "review": "asd",
+    "travelDate": "",
+    "approved": true,
+    "featured": false,
+    "createdAt": "2026-06-19T09:58:17.728Z"
+  }
+]

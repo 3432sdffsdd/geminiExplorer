@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "ammad",
+    "location": "karachi",
+    "tourPackage": "Skardu & Deosai National Park",
+    "rating": 5,
+    "review": "awesome experience",
+    "travelDate": "",
+    "approved": true,
+    "featured": false,
+    "createdAt": "2026-06-18T06:40:36Z"
+  },
+  {
+    "id": 2,
+    "name": "shahzad",
+    "location": "karachi",
+    "tourPackage": "Neelum Valley Tour",
+    "rating": 5,
+    "review": "thats was special",
+    "travelDate": "",
+    "approved": true,
+    "featured": true,
+    "createdAt": "2026-06-18T06:51:57Z"
+  }
+]

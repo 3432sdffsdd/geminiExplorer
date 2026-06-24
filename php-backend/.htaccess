@@ -1,0 +1,18 @@
+# --- Protect the raw reviews data file from direct download ---
+# PHP still reads it server-side; this only blocks public HTTP access to it.
+<Files "reviews.json">
+    # Apache 2.4+
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    # Apache 2.2
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# --- Gzip compress JSON responses for faster transfer ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/json text/plain
+</IfModule>

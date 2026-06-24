@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Tours", href: "/#tours" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Transport", href: "/transport" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "https://wa.me/923003667466?text=Hi%2C%20I%20am%20interested%20in%20a%20Pakistan%20tour%20package." },
 ];
 
